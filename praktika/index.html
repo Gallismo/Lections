@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="js/fancybox-master/dist/jquery.fancybox.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Smokum:regular" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,100italic,300,300italic,regular,italic,500,500italic,700,700italic,900,900italic" rel="stylesheet" />
+    <title>Document</title>
+</head>
+<body>
+    <div class="blocks">
+        <div class="header">
+            <img src="src/Gazprom_1.png " class="logo" alt="">
+            <img src="src/Gazprom_2.png " class="logo" alt="">
+        </div>
+        <div class="timer">
+            <div class="timer_consluion">
+                <h1 class = "color_text timer_text" id="current_date_time_block_hours"></h1>
+                <h1 class = "color_text timer_text">:</h1>
+                <h1 class = "color_text timer_text" id="current_date_time_block_minutes"></h1>
+                <h1 class = "color_text timer_text">:</h1>
+                <h1 class = "color_text timer_text" id="current_date_time_block_seconds"></h1>
+            </div>
+
+            </div>
+            <div class="current_date">
+                <div class="date_format">
+                    <h1 class = "color_text date_text" id="current_date_format"></h1>
+                </div>
+                <div class="day_format">
+                    <h1 class = "color_text timer_text" id="current_day_format"></h1>
+                </div>
+            </div>
+        <div class="address">
+            <h1 class="color_text">
+                Пархоменко 157
+            </h1>
+        </div>
+        <div class="menu_buttons">
+            <a class="buttons map" href="src/Map_1.pdf" data-type="iframe" data-fancybox>
+                <h1 class="text_button color_text">
+                   Схема проезда до Единого центра предоставления услуг
+                </h1>
+            </a>
+            <a class="buttons" href="src/dogasification.png" data-fancybox>
+                <h1 class="text_button color_text">
+                    Догазификация
+                </h1>
+            </a>
+            <a class="buttons" href="src/email_request.png" data-fancybox>
+                <h1 class="text_button color_text">
+                    Заявление о получение счета на электронную почту
+                </h1>
+            </a>
+            <a class="buttons" href="src/adresa.pdf" data-type="iframe" data-fancybox>
+                <h1 class="text_button color_text" >
+                    Адрес участков филиала ПАО "Газпром газораспределение Уфа" в г.Уфе
+                </h1>
+            </a>
+            <a class="buttons" href="src/phones.pdf" data-type="iframe" data-fancybox>
+                <h1 class="text_button color_text" >
+                    Контакты
+                </h1>
+            </a>
+<!--            Вставка новой кнопки с открытием картинки или пдф файла в виде модального окна-->
+<!--            data-type="iframe" - если пдф файл, data-fancybox - обязательно -->
+<!--            <a class="buttons" href="путь до файла" data-type="iframe" data-fancybox>-->
+<!--                <h1 class="text_button color_text" >-->
+<!--                    Имя кнопки-->
+<!--                </h1>-->
+<!--            </a>-->
+
+<!--            Вставка кнопки, которая ведет на новую страницу, где уже будут кнопки другие-->
+<!--            <a class="buttons" href="путь до html файла">-->
+<!--                <h1 class="text_button color_text" >-->
+<!--                    Имя кнопки-->
+<!--                </h1>-->
+<!--            </a>-->
+        </div>
+
+        <img src="src/qr-code.jpg" class="qr-code">
+    </div>
+    <script src="js/jquery-3.6.1.min.js"></script>
+    <script src="js/fancybox-master/dist/jquery.fancybox.min.js"></script>
+    <script type="text/javascript">
+
+        /* функция добавления ведущих нулей */
+        /* (если число меньше десяти, перед числом добавляем ноль) */
+        function zero_first_format(value)
+        {
+            if (value < 10)
+            {
+                value='0'+value;
+            }
+            return value;
+        }
+
+        /* функции получения текущегfо времени*/
+        function day(){
+            var month = [
+                'Января',
+                'Февраля',
+                'Марта',
+                'Апреля',
+                'Мая',
+                'Июня',
+                'Июля',
+                'Августа',
+                'Сентября',
+                'Октября',
+                'Ноября',
+                'Декабря'
+            ];
+            var d = new Date();
+            var n = d.getMonth();
+            var current_datetime = new Date();
+            var day = zero_first_format(current_datetime.getDate());
+            var year = current_datetime.getFullYear();
+
+            return day+" "+month    [n]+" "+year;
+        }
+        function hours()
+        {
+            var current_datetime = new Date();
+            var hours = zero_first_format(current_datetime.getHours());
+            return hours;
+        }
+        function minutes()
+        {
+            var current_datetime = new Date();
+            var minutes = zero_first_format(current_datetime.getMinutes());
+            return minutes;
+        }
+        function seconds()
+        {
+            var current_datetime = new Date();
+            var seconds = zero_first_format(current_datetime.getSeconds());
+            return seconds;
+        }
+        setInterval(function () {
+            document.getElementById('current_day_format').innerHTML = day();
+            document.getElementById('current_date_time_block_hours').innerHTML = hours();
+            document.getElementById('current_date_time_block_minutes').innerHTML = minutes();
+            document.getElementById('current_date_time_block_seconds').innerHTML = seconds();
+        }, 1000);
+    </script>
+</body>
+</html>
+

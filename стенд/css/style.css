@@ -1,0 +1,136 @@
+:root {
+    touch-action: pan-x pan-y;
+    height: 100%;
+}
+body{
+    margin:0;
+    background: #efefef url(../src/Bg.jpg) repeat fixed top left;
+    touch-action: none;
+    scale: none;
+}
+
+.logo{
+    width: 40%;
+    height: auto;
+}
+.color_text{
+    font-family: Roboto;
+    color: rgb(1, 114, 199);
+}   
+.timer_text{
+    font-size: 20vw;
+    margin: 1vw 1vw 1vw 1vw;
+}
+.timer_consluion{
+    display: flex;
+    justify-content: space-between;
+
+}
+.timer_consluion>h1{
+    margin-bottom: 0px;
+    height: 11vw;
+}
+.blocks{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.header>h1{
+    font-size: 70px;
+    color: rgb(1, 114, 199);
+}
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    margin: 50px;
+}
+.timer>h1{
+    font-size: 125px;
+    letter-spacing: 30px;
+}
+.current_date{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.date_format{
+    margin-top: 15vw;
+}
+.date_format>h1{
+    margin: 0px;
+    font-size: 6vw;
+}
+.day_format>h1{
+    margin: 0px;
+    font-size: 5vw;
+}
+.address>h1{
+    font-size: 8vw;
+    margin: 50px;
+}
+.menu_buttons{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 50px;
+}
+.buttons{
+    padding: 3vw 10px;
+    width: 90%;
+    text-decoration: none;
+    background-color: rgb(1, 114, 199);
+    border-radius: 10px;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+}
+.text_button{
+    font-size:1.5rem;
+    text-align:center;
+    vertical-align:middle;
+    color: rgb(255, 255, 255);
+    margin: 0px;
+}
+.list_map{
+    align-items: center;
+}
+.back_button{
+    position: fixed;
+    top:10%;
+    padding: 3vw 10px;
+    width: 7%;
+    height: 80%;
+    text-decoration: none;
+    background-color: rgba(1, 113, 199, 0.137);
+    margin-bottom: 15px;
+    align-items: center;
+    text-align: center;
+}
+.fancybox-button {
+    height: 100px !important;
+    width: 100px !important;
+}
+.fancybox-toolbar {
+    opacity: 1;
+    visibility: visible;
+}
+
+.blocks {
+    position: relative;
+    padding-bottom: 25%;
+}
+
+.qr-code {
+    right: 0;
+    max-width: 300px;
+    position: absolute;
+    bottom: 0;
+    width: 50%;
+    height: auto;
+}
